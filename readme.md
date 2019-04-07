@@ -14,3 +14,12 @@
 - It can be only one word
 - It can use only letters, numbers, and the underscore (\_) character
 - It can’t begin with a number
+
+## Analogy with Javascript
+
+| Python                 | Javascript                  |
+| ---------------------- | --------------------------- |
+| `len('Ramzan')`        | `'Ramzan'.length`           |
+| `input(default_value)` | `prompt(msg, defaultValue)` |
+| `'Ramzan' + str(1996)` | `'Ramzan' + 1996`           |
+| `# Ramzan`             | `// Ramzan`                 |
