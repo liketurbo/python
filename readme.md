@@ -15,6 +15,45 @@
 'Ramzan' * 2 ⇒ RamzanRamzan
 ```
 
+## Statement vs expression
+
+> if you can assign it to a variable - <b>expression</b>
+
+```
+2 + 2
+3 * 7
+1 + 2 + 3 * (8 ** 9) - sqrt(4.0)
+min(2, 22)
+max(3, 94)
+round(81.5)
+"foo"
+"bar"
+"foo" + "bar"
+None
+True
+False
+2
+3
+4.0
+```
+
+> if you can't - <b>statement</b>
+
+```
+if CONDITION:
+elif CONDITION:
+else:
+for VARIABLE in SEQUENCE:
+while CONDITION:
+try:
+except EXCEPTION as e:
+class MYCLASS:
+def MYFUNCTION():
+return SOMETHING
+raise SOMETHING
+with SOMETHING:
+```
+
 ## Variable rules
 
 - It can be only one word
@@ -22,6 +61,30 @@
 - It can’t begin with a number
 
 ## Analogy with Javascript
+
+### I/O
+
+| Python                              | Javascript                  |
+| ----------------------------------- | --------------------------- |
+| `input(default_value)`              | `prompt(msg, defaultValue)` |
+| `print(...args, sep=' ', end='\n')` | `console.log(...args)`      |
+
+### Module
+
+| Python                       | Javascript                         |
+| ---------------------------- | ---------------------------------- |
+| `import random`              | `import random from 'random'`      |
+| `from random import randint` | `import { randint } from 'random'` |
+
+### Expression
+
+| Python                 | Javascript         |
+| ---------------------- | ------------------ |
+| `True`                 | `true`             |
+| `False`                | `false`            |
+| `False`                | `false`            |
+| `None`                 | `undefined` `null` |
+| `'Ramzan' + str(1996)` | `'Ramzan' + 1996`  |
 
 ### Conditions
 
@@ -41,15 +104,11 @@
 | `for i in range(12, 16):`   | `for (let i = 12; i < 16; i++) {}`   |
 | `for i in range(1, 10, 2):` | `for (let i = 1; i < 10; i += 2) {}` |
 
-### Other
+### Functions
 
-| Python                       | Javascript                         |
-| ---------------------------- | ---------------------------------- |
-| `len('Ramzan')`              | `'Ramzan'.length`                  |
-| `input(default_value)`       | `prompt(msg, defaultValue)`        |
-| `'Ramzan' + str(1996)`       | `'Ramzan' + 1996`                  |
-| `import random`              | `import random from 'random'`      |
-| `from random import randint` | `import { randint } from 'random'` |
+| Python          | Javascript        |
+| --------------- | ----------------- |
+| `len('Ramzan')` | `'Ramzan'.length` |
 
 ## Answers (Albert Sweigart - Automate the Boring Stuff with Python)
 
@@ -82,3 +141,20 @@
 12. (look at loops)
 13. `for i in range(1, 11): print(i)`; `i = 1 while i < 11: print(i)`
 14. `spam.bacon()`
+
+### Chapter 3
+
+1. group code that get executed multiple times
+2. defined after `def` statement, executed when function is called, called after defining
+3. `def`
+4. function call unlike function evaluate what inside function
+5. one global scope, as many local scope as many functions
+6. it stops existing
+7. value that would be returned by function; yes, it can be part of expression
+8. `None`
+9. by reserved word `global`
+10. NoneType data type
+11. it defines variable named `areallyourpetsnamederic`
+12. spam.bacon()
+13. use `try: except Exception:`
+14. in `try` goes everything before it been catch by `Exception`
