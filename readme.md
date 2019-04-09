@@ -27,7 +27,7 @@
 
 | Python                   | Javascript                      |
 | ------------------------ | ------------------------------- |
-| `True or False`          | `true || false`                 |
+| `True or False`          | `true \|\| false`               |
 | `True and False`         | `true && false`                 |
 | `not True`               | `!true`                         |
 | `if name == 'Ramzan':`   | `if (name === 'Ramzan') {}`     |
