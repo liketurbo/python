@@ -1,4 +1,4 @@
-# Python learning
+# Python
 
 ## Operators
 
@@ -13,6 +13,7 @@
 'Ramzan' (+|-|/) 2 ⇒ error
 'Ramzan' * 2.0 ⇒ error
 'Ramzan' * 2 ⇒ RamzanRamzan
+['Ramzan'] * 2 ⇒ ['Ramzan', 'Ramzan']
 ```
 
 ## Statement vs expression
@@ -78,13 +79,49 @@ with SOMETHING:
 
 ### Expression
 
-| Python                 | Javascript         |
-| ---------------------- | ------------------ |
-| `True`                 | `true`             |
-| `False`                | `false`            |
-| `False`                | `false`            |
-| `None`                 | `undefined` `null` |
-| `'Ramzan' + str(1996)` | `'Ramzan' + 1996`  |
+| Python                          | Javascript                               |
+| ------------------------------- | ---------------------------------------- |
+| `'Ramzan' + str(1996)`          | `'Ramzan' + 1996`                        |
+| -                               | -                                        |
+| `[1, 2, 3] + [4, 5]`            | `[1, 2, 3].concat([4, 5])`               |
+| `[1, 2, 3].append(4)`           | `[1, 2, 3].push(4)`                      |
+| `[1, 2, 3].insert(0, 4)`        | `[1, 2, 3].unshift(4)`                   |
+| `del arr[i]`                    | `arr.splice(i, 1)`                       |
+| `[1, 2, 3].remove(2)`           | `[1, 2, 3].splice([1, 2, 3].indexOf(2))` |
+| `'Ramzan' in ['Ramzan', 1996]`  | `['Ramzan', 1996].includes('Ramzan')`    |
+| `'Ramzan' not ['Ramzan', 1996]` | `!['Ramzan', 1996].includes('Ramzan')`   |
+
+### Data types and variables
+
+| Python              | Javascript                  |
+| ------------------- | --------------------------- |
+| `True`              | `true`                      |
+| `False`             | `false`                     |
+| `False`             | `false`                     |
+| `None`              | `undefined` `null`          |
+| `one, two = [1, 2]` | `const [one, two] = [1, 2]` |
+
+#### List
+
+> index
+
+```
+anim = ['cat', 'bat', 'rat', 'elephant']
+
+anim[1] # 'bat'
+anim[-1] # 'elephant'
+```
+
+> slice
+
+```
+# f_number - start index; s_number - up to, but not include
+anim[1:3] # ['bat', 'rat']
+anim[2:-1] # ['rat']
+anim[1:] # ['bat', 'rat', 'elephant']
+anim[:-1] # ['cat', 'bat', 'rat']
+anim[:] # ['cat', 'bat', 'rat', 'elephant']
+```
 
 ### Conditions
 
@@ -103,6 +140,7 @@ with SOMETHING:
 | `for i in range(5):`        | `for (let i = 0; i < 5; i++) {}`     |
 | `for i in range(12, 16):`   | `for (let i = 12; i < 16; i++) {}`   |
 | `for i in range(1, 10, 2):` | `for (let i = 1; i < 10; i += 2) {}` |
+| `for i in [1, 10, 2]:`      | `for (const i of [1, 10, 2]) {}`     |
 
 ### Functions
 
