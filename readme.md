@@ -61,6 +61,9 @@ with SOMETHING:
 - It can use only letters, numbers, and the underscore (\_) character
 - It can’t begin with a number
 
+- primitives: `bool` `int` `float` `str` stores variable
+- non-primitives: `tuple` `list` stores reference
+
 ## Analogy with Javascript
 
 ### I/O
@@ -76,20 +79,24 @@ with SOMETHING:
 | ---------------------------- | ---------------------------------- |
 | `import random`              | `import random from 'random'`      |
 | `from random import randint` | `import { randint } from 'random'` |
+| `type(something)`            | `typeof something`                 |
 
 ### Expression
 
-| Python                          | Javascript                               |
-| ------------------------------- | ---------------------------------------- |
-| `'Ramzan' + str(1996)`          | `'Ramzan' + 1996`                        |
-| -                               | -                                        |
-| `[1, 2, 3] + [4, 5]`            | `[1, 2, 3].concat([4, 5])`               |
-| `[1, 2, 3].append(4)`           | `[1, 2, 3].push(4)`                      |
-| `[1, 2, 3].insert(0, 4)`        | `[1, 2, 3].unshift(4)`                   |
-| `del arr[i]`                    | `arr.splice(i, 1)`                       |
-| `[1, 2, 3].remove(2)`           | `[1, 2, 3].splice([1, 2, 3].indexOf(2))` |
-| `'Ramzan' in ['Ramzan', 1996]`  | `['Ramzan', 1996].includes('Ramzan')`    |
-| `'Ramzan' not ['Ramzan', 1996]` | `!['Ramzan', 1996].includes('Ramzan')`   |
+| Python                             | Javascript                               |
+| ---------------------------------- | ---------------------------------------- |
+| `'Ramzan' + str(1996)`             | `'Ramzan' + 1996`                        |
+| -                                  | -                                        |
+| `[1, 2, 3] + [4, 5]`               | `[1, 2, 3].concat([4, 5])`               |
+| `[1, 2, 3].append(4)`              | `[1, 2, 3].push(4)`                      |
+| `[1, 2, 3].insert(0, 4)`           | `[1, 2, 3].unshift(4)`                   |
+| `del arr[i]`                       | `arr.splice(i, 1)`                       |
+| `[1, 2, 3].remove(2)`              | `[1, 2, 3].splice([1, 2, 3].indexOf(2))` |
+| `'Ramzan' in ['Ramzan', 1996]`     | `['Ramzan', 1996].includes('Ramzan')`    |
+| `'Ramzan' not ['Ramzan', 1996]`    | `!['Ramzan', 1996].includes('Ramzan')`   |
+| `(1, 2, 3)`                        | `Object.freeze([1, 2, 3])`               |
+| `tuple([1, 2, 3]) list((1, 2, 3))` | `Array(1, 2, 3)`                         |
+| `copy.copy([1, 2, 3])`             | `_.clone([1, 2, 3])`                     |
 
 ### Data types and variables
 
@@ -196,3 +203,23 @@ anim[:] # ['cat', 'bat', 'rat', 'elephant']
 12. spam.bacon()
 13. use `try: except Exception:`
 14. in `try` goes everything before it been catch by `Exception`
+
+### Chapter 4
+
+1. a list value
+2. `spam[2] = 'Hello'`
+3. `d`
+4. `d`
+5. `['a', 'b']`
+6. returns `1`
+7. adds `99` at the end of a list
+8. removes value `cat` from a list
+9. `+`, `copy.copy`
+10. `append` adds at the end, `insert` inserts value at selected index
+11. by index `del arr[num]`, by value `arr.remove(value)`
+12. strings as list has index, substring, include
+13. tuple alike to list immutable
+14. `(42)`
+15. tuple ⇒ list `list(tuple_arr)`, list ⇒ tuple `tuple(list_arr)`
+16. address to the list
+17. `copy.deepcopy` alike `copy.copy` copies inner lists as well
