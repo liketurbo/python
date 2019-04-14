@@ -83,20 +83,23 @@ with SOMETHING:
 
 ### Expression
 
-| Python                             | Javascript                               |
-| ---------------------------------- | ---------------------------------------- |
-| `'Ramzan' + str(1996)`             | `'Ramzan' + 1996`                        |
-| -                                  | -                                        |
-| `[1, 2, 3] + [4, 5]`               | `[1, 2, 3].concat([4, 5])`               |
-| `[1, 2, 3].append(4)`              | `[1, 2, 3].push(4)`                      |
-| `[1, 2, 3].insert(0, 4)`           | `[1, 2, 3].unshift(4)`                   |
-| `del arr[i]`                       | `arr.splice(i, 1)`                       |
-| `[1, 2, 3].remove(2)`              | `[1, 2, 3].splice([1, 2, 3].indexOf(2))` |
-| `'Ramzan' in ['Ramzan', 1996]`     | `['Ramzan', 1996].includes('Ramzan')`    |
-| `'Ramzan' not ['Ramzan', 1996]`    | `!['Ramzan', 1996].includes('Ramzan')`   |
-| `(1, 2, 3)`                        | `Object.freeze([1, 2, 3])`               |
-| `tuple([1, 2, 3]) list((1, 2, 3))` | `Array(1, 2, 3)`                         |
-| `copy.copy([1, 2, 3])`             | `_.clone([1, 2, 3])`                     |
+| Python                                | Javascript                                                |
+| ------------------------------------- | --------------------------------------------------------- |
+| `'Ramzan' + str(1996)`                | `'Ramzan' + 1996`                                         |
+| -                                     | -                                                         |
+| `[1, 2, 3] + [4, 5]`                  | `[1, 2, 3].concat([4, 5])`                                |
+| `[1, 2, 3].append(4)`                 | `[1, 2, 3].push(4)`                                       |
+| `[1, 2, 3].insert(0, 4)`              | `[1, 2, 3].unshift(4)`                                    |
+| `del arr[i]`                          | `arr.splice(i, 1)`                                        |
+| `[1, 2, 3].remove(2)`                 | `[1, 2, 3].splice([1, 2, 3].indexOf(2))`                  |
+| `'Ramzan' in ['Ramzan', 1996]`        | `['Ramzan', 1996].includes('Ramzan')`                     |
+| `'Ramzan' not ['Ramzan', 1996]`       | `!['Ramzan', 1996].includes('Ramzan')`                    |
+| `(1, 2, 3)`                           | `Object.freeze([1, 2, 3])`                                |
+| `tuple([1, 2, 3]) list((1, 2, 3))`    | `Array(1, 2, 3)`                                          |
+| `copy.copy([1, 2, 3])`                | `_.clone([1, 2, 3])`                                      |
+| -                                     | -                                                         |
+| `'name' in {name: 'Ramzan', age: 23}` | `Object.keys({name: 'Ramzan', age: 23}).includes('name')` |
+| `{name: 'Ramzan', age: 23}.items()`   | `_.toPairs({name: 'Ramzan', age: 23})`                    |
 
 ### Data types and variables
 
@@ -223,3 +226,14 @@ anim[:] # ['cat', 'bat', 'rat', 'elephant']
 15. tuple ⇒ list `list(tuple_arr)`, list ⇒ tuple `tuple(list_arr)`
 16. address to the list
 17. `copy.deepcopy` alike `copy.copy` copies inner lists as well
+
+### Chapter 5
+
+1. `{}`
+2. `{ 'foo': 42 }`
+3. unlike to list data type for indexes in dictionary can be `str`
+4. it return 100
+5. no difference
+6. `'cat' in spam` is are same as `'cat' in spam.keys()`
+7. `spam.setdefault('color', 'black')`
+8. `pprint.pprint()`
