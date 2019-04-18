@@ -127,18 +127,6 @@ False
 | `copy.copy([1, 2, 3])`                | `_.clone([1, 2, 3])`                     |
 | `', '.join(['cats', 'rats', 'bats'])` | `['cats', 'rats', 'bats'].join(', ')`    |
 
-### Data types and variables
-
-| Python              | Javascript                  |
-| ------------------- | --------------------------- |
-| `True`              | `true`                      |
-| `False`             | `false`                     |
-| `False`             | `false`                     |
-| `None`              | `undefined` `null`          |
-| `one, two = [1, 2]` | `const [one, two] = [1, 2]` |
-
-#### List
-
 > index
 
 ```
@@ -158,6 +146,16 @@ anim[1:] # ['bat', 'rat', 'elephant']
 anim[:-1] # ['cat', 'bat', 'rat']
 anim[:] # ['cat', 'bat', 'rat', 'elephant']
 ```
+
+### Data types and variables
+
+| Python              | Javascript                  |
+| ------------------- | --------------------------- |
+| `True`              | `true`                      |
+| `False`             | `false`                     |
+| `False`             | `false`                     |
+| `None`              | `undefined` `null`          |
+| `one, two = [1, 2]` | `const [one, two] = [1, 2]` |
 
 ### Conditions
 
