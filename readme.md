@@ -83,23 +83,49 @@ with SOMETHING:
 
 ### Expression
 
+#### Dictionary
+
 | Python                                | Javascript                                                |
 | ------------------------------------- | --------------------------------------------------------- |
-| `'Ramzan' + str(1996)`                | `'Ramzan' + 1996`                                         |
-| -                                     | -                                                         |
-| `[1, 2, 3] + [4, 5]`                  | `[1, 2, 3].concat([4, 5])`                                |
-| `[1, 2, 3].append(4)`                 | `[1, 2, 3].push(4)`                                       |
-| `[1, 2, 3].insert(0, 4)`              | `[1, 2, 3].unshift(4)`                                    |
-| `del arr[i]`                          | `arr.splice(i, 1)`                                        |
-| `[1, 2, 3].remove(2)`                 | `[1, 2, 3].splice([1, 2, 3].indexOf(2))`                  |
-| `'Ramzan' in ['Ramzan', 1996]`        | `['Ramzan', 1996].includes('Ramzan')`                     |
-| `'Ramzan' not ['Ramzan', 1996]`       | `!['Ramzan', 1996].includes('Ramzan')`                    |
-| `(1, 2, 3)`                           | `Object.freeze([1, 2, 3])`                                |
-| `tuple([1, 2, 3]) list((1, 2, 3))`    | `Array(1, 2, 3)`                                          |
-| `copy.copy([1, 2, 3])`                | `_.clone([1, 2, 3])`                                      |
-| -                                     | -                                                         |
 | `'name' in {name: 'Ramzan', age: 23}` | `Object.keys({name: 'Ramzan', age: 23}).includes('name')` |
 | `{name: 'Ramzan', age: 23}.items()`   | `_.toPairs({name: 'Ramzan', age: 23})`                    |
+
+#### String
+
+| Python                 | Javascript                                                  |
+| ---------------------- | ----------------------------------------------------------- |
+| `'Ramzan' + str(1996)` | `'Ramzan' + 1996`                                           |
+| `len('Ramzan')`        | `'Ramzan'.length`                                           |
+| `'Ramzan'.isalpha()`   | `/^[a-z]+$/i.test('Ramzan')`                                |
+| `'Ramzan'.isalnum()`   | `/^[a-z0-9]+$/i.test('Ramzan')`                             |
+| `'Ramzan'.isdecimal()` | `/^[0-9]+$/.test('Ramzan')`                                 |
+| `'Ramzan'.isspace()`   | `/^\s+$/.test('Ramzan')`                                    |
+| `'Ramzan'.istitle()`   | `/^([\W\d]|\b[A-Z]+\s?|\b[A-Z][a-z]+\s?)+$/.test('Ramzan')` |
+| `'Ramzan'.strip()`     | `'Ramzan'.trim()`                                           |
+
+```
+# String
+>>> 'abc12345'.islower()
+True
+>>> '12345'.islower()
+False
+```
+
+#### List and Tuple
+
+| Python                                | Javascript                               |
+| ------------------------------------- | ---------------------------------------- |
+| `[1, 2, 3] + [4, 5]`                  | `[1, 2, 3].concat([4, 5])`               |
+| `[1, 2, 3].append(4)`                 | `[1, 2, 3].push(4)`                      |
+| `[1, 2, 3].insert(0, 4)`              | `[1, 2, 3].unshift(4)`                   |
+| `del arr[i]`                          | `arr.splice(i, 1)`                       |
+| `[1, 2, 3].remove(2)`                 | `[1, 2, 3].splice([1, 2, 3].indexOf(2))` |
+| `'Ramzan' in ['Ramzan', 1996]`        | `['Ramzan', 1996].includes('Ramzan')`    |
+| `'Ramzan' not ['Ramzan', 1996]`       | `!['Ramzan', 1996].includes('Ramzan')`   |
+| `(1, 2, 3)`                           | `Object.freeze([1, 2, 3])`               |
+| `tuple([1, 2, 3]) list((1, 2, 3))`    | `Array(1, 2, 3)`                         |
+| `copy.copy([1, 2, 3])`                | `_.clone([1, 2, 3])`                     |
+| `', '.join(['cats', 'rats', 'bats'])` | `['cats', 'rats', 'bats'].join(', ')`    |
 
 ### Data types and variables
 
@@ -151,12 +177,6 @@ anim[:] # ['cat', 'bat', 'rat', 'elephant']
 | `for i in range(12, 16):`   | `for (let i = 12; i < 16; i++) {}`   |
 | `for i in range(1, 10, 2):` | `for (let i = 1; i < 10; i += 2) {}` |
 | `for i in [1, 10, 2]:`      | `for (const i of [1, 10, 2]) {}`     |
-
-### Functions
-
-| Python          | Javascript        |
-| --------------- | ----------------- |
-| `len('Ramzan')` | `'Ramzan'.length` |
 
 ## Answers (Albert Sweigart - Automate the Boring Stuff with Python)
 
