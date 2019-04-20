@@ -102,6 +102,7 @@ with SOMETHING:
 | `'Ramzan'.isspace()`   | `/^\s+$/.test('Ramzan')`                                    |
 | `'Ramzan'.istitle()`   | `/^([\W\d]|\b[A-Z]+\s?|\b[A-Z][a-z]+\s?)+$/.test('Ramzan')` |
 | `'Ramzan'.strip()`     | `'Ramzan'.trim()`                                           |
+| `'Ramzan'.split()`     | `'Ramzan'.split(' ')`                                       |
 
 ```
 # String
@@ -255,3 +256,16 @@ anim[:] # ['cat', 'bat', 'rat', 'elephant']
 6. `'cat' in spam` is are same as `'cat' in spam.keys()`
 7. `spam.setdefault('color', 'black')`
 8. `pprint.pprint()`
+
+### Chapter 6
+
+1. escape character - character that impossible put into string
+2. `\t` - tab, `\n` - newline
+3. `\\`
+4. because it ends string
+5. with using triple quotes `'''`
+6. e, Hello, Hello, lo World!
+7. HELLO, True, hello
+8. `['Remember,', 'remember,', 'the', 'fifth', 'of', 'November.']`
+9. `rjust()`, `ljust()`, `center()`
+10. `rstrip()`, `lstrip()`, `strip()`
