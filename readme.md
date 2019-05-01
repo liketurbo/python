@@ -64,6 +64,30 @@ with SOMETHING:
 - primitives: `bool` `int` `float` `str` stores variable
 - non-primitives: `tuple` `list` stores reference
 
+## Creating regex
+
+1. `import re`
+2. `regex = re.compile(r'...', re.DOTALL?)`
+3. `match = regex.search(text)`
+4. `finding = match.group()`
+
+> <tt><small>group(0) = group(), group(0, 1, 2, ...)</small></tt> > <tt><small>groups() - tuple of groups without `0`</small></tt>
+
+> <tt>greedy</tt> - <small>longest</small> <tt>non-greedy</tt> - <small>shortest</small>
+
+| Mark  | Meaning                         |
+| ----- | ------------------------------- |
+| `*`   | match zero or more              |
+| `*?`  | match zero or more (non-greedy) |
+| `+`   | match one or more               |
+| `+?`  | match one or more (non-greedy)  |
+| `()`  | mini regex (group)              |
+| `{}`  | range                           |
+| `{}?` | range (non-greedy)              |
+| `[]`  | any of                          |
+| `[^]` | !any of                         |
+| `.`   | any character (except `\n`)     |
+
 ## Analogy with Javascript
 
 ### I/O
@@ -73,13 +97,14 @@ with SOMETHING:
 | `input(default_value)`              | `prompt(msg, defaultValue)` |
 | `print(...args, sep=' ', end='\n')` | `console.log(...args)`      |
 
-### Module
+### Modules
 
-| Python                       | Javascript                         |
-| ---------------------------- | ---------------------------------- |
-| `import random`              | `import random from 'random'`      |
-| `from random import randint` | `import { randint } from 'random'` |
-| `type(something)`            | `typeof something`                 |
+| Python                                                   | Javascript                                     |
+| -------------------------------------------------------- | ---------------------------------------------- |
+| `import random`                                          | `import random from 'random'`                  |
+| `from random import randint`                             | `import { randint } from 'random'`             |
+| `type(something)`                                        | `typeof something`                             |
+| `re.compile(r'search_value').sub(replace_value, string)` | `string.replace(/searchValue/g, replaceValue)` |
 
 ### Expression
 
@@ -269,3 +294,28 @@ anim[:] # ['cat', 'bat', 'rat', 'elephant']
 8. `['Remember,', 'remember,', 'the', 'fifth', 'of', 'November.']`
 9. `rjust()`, `ljust()`, `center()`
 10. `rstrip()`, `lstrip()`, `strip()`
+
+### Chapter 7
+
+1. `re.compile(pattern)`
+2. backslashes in python using for escaping, we do not same behavior in regex
+3. search returns a Match object
+4. you can get actual strings with `group` method of Match object
+5. in `r'(\d\d\d)-(\d\d\d-\d\d\d\d)'`, group(0) covers whole match, group(1) 3 first digits, groups(2) 7 last digits
+6. I would specify that I want actual regex match to parentheses or period character with `\`
+7. `findall` returns list of string or tuples (if it's been specified group(s))
+8. `|` means one of
+9. `?` means match zero or one of the preceding group
+10. `*` - zero or more, `+` - one or more
+11. `{3}` match which exactly 3, `{3,5}` match all between 3 and 5
+12. `\d` - numeric; `\w` - letter, numeric, underscore; `\s` - space, tab, newline
+13. `\D` - !numeric; `\W` - !letter, !numeric, !underscore; `\s` - !space, !tab, !newline
+14. you make case insensitive with flag `re.I`
+15. `.` match every character except newlines, with flag `re.DOTALL` it also will match to newlines
+16. `.*?` unlike `.*` activates non-greedy mode (which means stop at first match)
+17. `[0-9a-z]` all numbers and lowercase letter
+18. `re.compile(r'\d+').sub('X', '12 drummers, 11 pipers, five rings, 3 hens')` should return string with replaced number with `X`
+19. `re.VERBOSE` makes ignore `#` and everything after it, also ignores extra spaces
+20. `(^\d{,3}$)|(^\d,(\d{3}\,?)+)` for matching number with commas for every three digits
+21. `([A-Z]\w+)\sNakamoto` for matching full name of someone whose last name is Nakamoto
+22. `(Alice|Bob|Carol)\s(eats|pets|throws)\s(apples|cats|baseballs)\.$` for matching certain sentences
