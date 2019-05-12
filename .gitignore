@@ -1,2 +1,8 @@
-# idle config
+# IDLE config
 .vscode/
+
+# Python cache
+__pycache__/
+
+# Production
+dist/
