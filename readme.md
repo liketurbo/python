@@ -64,7 +64,7 @@ with SOMETHING:
 - primitives: `bool` `int` `float` `str` stores variable
 - non-primitives: `tuple` `list` stores reference
 
-## Creating regex
+## Regex
 
 1. `import re`
 2. `regex = re.compile(r'...', re.DOTALL?)`
@@ -88,6 +88,46 @@ with SOMETHING:
 | `[^]` | !any of                         |
 | `.`   | any character (except `\n`)     |
 
+| Python                                                   | Javascript                                     |
+| -------------------------------------------------------- | ---------------------------------------------- |
+| `re.compile(r'search_value').sub(replace_value, string)` | `string.replace(/searchValue/g, replaceValue)` |
+
+## Files
+
+### Reading
+
+```
+file = open(file, 'r')
+file.read()
+file.close()
+```
+
+### Writing
+
+```
+baconFile = open(file, 'w')
+file.write(text)
+file.close()
+```
+
+### Append
+
+```
+baconFile = open(file, 'a')
+file.write(text)
+file.close()
+```
+
+### _shelve_ module
+
+```
+import shelve
+shelfFile = shelve.open('mydata')
+cats = ['Zophie', 'Pooka', 'Simon']
+shelfFile['cats'] = cats
+shelfFile.close()
+```
+
 ## Analogy with Javascript
 
 ### I/O
@@ -99,12 +139,18 @@ with SOMETHING:
 
 ### Modules
 
-| Python                                                   | Javascript                                     |
-| -------------------------------------------------------- | ---------------------------------------------- |
-| `import random`                                          | `import random from 'random'`                  |
-| `from random import randint`                             | `import { randint } from 'random'`             |
-| `type(something)`                                        | `typeof something`                             |
-| `re.compile(r'search_value').sub(replace_value, string)` | `string.replace(/searchValue/g, replaceValue)` |
+![](http://heropublic.oss-cn-beijing.aliyuncs.com/080516.png)
+
+| Python                                                   | Javascript                                         |
+| -------------------------------------------------------- | -------------------------------------------------- |
+| `import random`                                          | `import random from 'random'`                      |
+| `from random import randint`                             | `import { randint } from 'random'`                 |
+| `type(something)`                                        | `typeof something`                                 |
+| `re.compile(r'search_value').sub(replace_value, string)` | `string.replace(/searchValue/g, replaceValue)`     |
+| `os.getcwd()`                                            | `process.cwd()`                                    |
+| `os.chdir('..')`                                         | `process.chdir('..')`                              |
+| `os.listdir(os.getcwd())`                                | `fs.readdirSync(process.cwd(), (err, fol) => fol)` |
+| `os.path.getsize(file)`                                  | `fs.statSync(file).size`                           |
 
 ### Expression
 
@@ -319,3 +365,15 @@ anim[:] # ['cat', 'bat', 'rat', 'elephant']
 20. `(^\d{,3}$)|(^\d,(\d{3}\,?)+)` for matching number with commas for every three digits
 21. `([A-Z]\w+)\sNakamoto` for matching full name of someone whose last name is Nakamoto
 22. `(Alice|Bob|Carol)\s(eats|pets|throws)\s(apples|cats|baseballs)\.$` for matching certain sentences
+
+### Chapter 8
+
+1. relative path is relative program's cwd **not to file!**
+2. absolute path start with the root folder
+3. `os.getcwd()` return string of cwd, `os.chdir()` changes cwd
+4. `.` - cwd, `..` - parent to cwd
+5. in `C:\bacon\eggs\spam.txt`, `C:\bacon\eggs` is dirname and `spam.txt` is base name
+6. `open` can be called with mode `r, w, a`
+7. write mode overwrite the existing file
+8. `read()` returns string, `readlines` returns list
+9. shelf resemble to dictionary data type
