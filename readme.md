@@ -377,3 +377,10 @@ anim[:] # ['cat', 'bat', 'rat', 'elephant']
 7. write mode overwrite the existing file
 8. `read()` returns string, `readlines` returns list
 9. shelf resemble to dictionary data type
+
+### Chapter 9
+
+1. `shutil.copy` copies single file, while `shutil.copytree` copies directory
+2. `shutil.move` used for renaming files `shutil.move(source, destination)` "move and rename"
+3. `shutil.rmtree` removes permanently folder (only, not file), `send2trash` sends to trash file and folders
+4. `zip_file = zipfile.ZipFile('file.zip'); zip_file.write('./spam.txt'); zip_file.close();`
