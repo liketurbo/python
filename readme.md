@@ -1,5 +1,10 @@
 # Python
 
+- [Debugging](./docs/debugging.md)
+- [Files](./docs/files.md)
+- [Analogy with Javascript](./docs/js-analogy.md)
+- [Regex](./docs/regex.md)
+
 ## Operators
 
 | Operator | Name                              | Example         |
@@ -10,10 +15,10 @@
 | `//`     | Integer division/floored quotient | `22 // 8 ⇒ 2`   |
 
 ```
-'Ramzan' (+|-|/) 2 ⇒ error
-'Ramzan' * 2.0 ⇒ error
-'Ramzan' * 2 ⇒ RamzanRamzan
-['Ramzan'] * 2 ⇒ ['Ramzan', 'Ramzan']
+'Bob' (+|-|/) 2 ⇒ error
+'Bob' * 2.0 ⇒ error
+'Bob' * 2 ⇒ BobBob
+['Bob'] * 2 ⇒ ['Bob', 'Bob']
 ```
 
 ## Statement vs expression
@@ -63,190 +68,6 @@ with SOMETHING:
 
 - primitives: `bool` `int` `float` `str` stores variable
 - non-primitives: `tuple` `list` stores reference
-
-## Regex
-
-1. `import re`
-2. `regex = re.compile(r'...', re.DOTALL?)`
-3. `match = regex.search(text)`
-4. `finding = match.group()`
-
-> <tt><small>group(0) = group(), group(0, 1, 2, ...)</small></tt> > <tt><small>groups() - tuple of groups without `0`</small></tt>
-
-> <tt>greedy</tt> - <small>longest</small> <tt>non-greedy</tt> - <small>shortest</small>
-
-| Mark  | Meaning                         |
-| ----- | ------------------------------- |
-| `*`   | match zero or more              |
-| `*?`  | match zero or more (non-greedy) |
-| `+`   | match one or more               |
-| `+?`  | match one or more (non-greedy)  |
-| `()`  | mini regex (group)              |
-| `{}`  | range                           |
-| `{}?` | range (non-greedy)              |
-| `[]`  | any of                          |
-| `[^]` | !any of                         |
-| `.`   | any character (except `\n`)     |
-
-| Python                                                   | Javascript                                     |
-| -------------------------------------------------------- | ---------------------------------------------- |
-| `re.compile(r'search_value').sub(replace_value, string)` | `string.replace(/searchValue/g, replaceValue)` |
-
-## Files
-
-### Reading
-
-```
-file = open(file, 'r')
-file.read()
-file.close()
-```
-
-### Writing
-
-```
-baconFile = open(file, 'w')
-file.write(text)
-file.close()
-```
-
-### Append
-
-```
-baconFile = open(file, 'a')
-file.write(text)
-file.close()
-```
-
-### _shelve_ module
-
-```
-import shelve
-shelfFile = shelve.open('mydata')
-cats = ['Zophie', 'Pooka', 'Simon']
-shelfFile['cats'] = cats
-shelfFile.close()
-```
-
-## Analogy with Javascript
-
-### I/O
-
-| Python                              | Javascript                  |
-| ----------------------------------- | --------------------------- |
-| `input(default_value)`              | `prompt(msg, defaultValue)` |
-| `print(...args, sep=' ', end='\n')` | `console.log(...args)`      |
-
-### Modules
-
-![](http://heropublic.oss-cn-beijing.aliyuncs.com/080516.png)
-
-| Python                                                   | Javascript                                         |
-| -------------------------------------------------------- | -------------------------------------------------- |
-| `import random`                                          | `import random from 'random'`                      |
-| `from random import randint`                             | `import { randint } from 'random'`                 |
-| `type(something)`                                        | `typeof something`                                 |
-| `re.compile(r'search_value').sub(replace_value, string)` | `string.replace(/searchValue/g, replaceValue)`     |
-| `os.getcwd()`                                            | `process.cwd()`                                    |
-| `os.chdir('..')`                                         | `process.chdir('..')`                              |
-| `os.listdir(os.getcwd())`                                | `fs.readdirSync(process.cwd(), (err, fol) => fol)` |
-| `os.path.getsize(file)`                                  | `fs.statSync(file).size`                           |
-
-### Expression
-
-#### Dictionary
-
-| Python                                | Javascript                                                |
-| ------------------------------------- | --------------------------------------------------------- |
-| `'name' in {name: 'Ramzan', age: 23}` | `Object.keys({name: 'Ramzan', age: 23}).includes('name')` |
-| `{name: 'Ramzan', age: 23}.items()`   | `_.toPairs({name: 'Ramzan', age: 23})`                    |
-
-#### String
-
-| Python                 | Javascript                                                  |
-| ---------------------- | ----------------------------------------------------------- |
-| `'Ramzan' + str(1996)` | `'Ramzan' + 1996`                                           |
-| `len('Ramzan')`        | `'Ramzan'.length`                                           |
-| `'Ramzan'.isalpha()`   | `/^[a-z]+$/i.test('Ramzan')`                                |
-| `'Ramzan'.isalnum()`   | `/^[a-z0-9]+$/i.test('Ramzan')`                             |
-| `'Ramzan'.isdecimal()` | `/^[0-9]+$/.test('Ramzan')`                                 |
-| `'Ramzan'.isspace()`   | `/^\s+$/.test('Ramzan')`                                    |
-| `'Ramzan'.istitle()`   | `/^([\W\d]|\b[A-Z]+\s?|\b[A-Z][a-z]+\s?)+$/.test('Ramzan')` |
-| `'Ramzan'.strip()`     | `'Ramzan'.trim()`                                           |
-| `'Ramzan'.split()`     | `'Ramzan'.split(' ')`                                       |
-
-```
-# String
->>> 'abc12345'.islower()
-True
->>> '12345'.islower()
-False
-```
-
-#### List and Tuple
-
-| Python                                | Javascript                               |
-| ------------------------------------- | ---------------------------------------- |
-| `[1, 2, 3] + [4, 5]`                  | `[1, 2, 3].concat([4, 5])`               |
-| `[1, 2, 3].append(4)`                 | `[1, 2, 3].push(4)`                      |
-| `[1, 2, 3].insert(0, 4)`              | `[1, 2, 3].unshift(4)`                   |
-| `del arr[i]`                          | `arr.splice(i, 1)`                       |
-| `[1, 2, 3].remove(2)`                 | `[1, 2, 3].splice([1, 2, 3].indexOf(2))` |
-| `'Ramzan' in ['Ramzan', 1996]`        | `['Ramzan', 1996].includes('Ramzan')`    |
-| `'Ramzan' not ['Ramzan', 1996]`       | `!['Ramzan', 1996].includes('Ramzan')`   |
-| `(1, 2, 3)`                           | `Object.freeze([1, 2, 3])`               |
-| `tuple([1, 2, 3]) list((1, 2, 3))`    | `Array(1, 2, 3)`                         |
-| `copy.copy([1, 2, 3])`                | `_.clone([1, 2, 3])`                     |
-| `', '.join(['cats', 'rats', 'bats'])` | `['cats', 'rats', 'bats'].join(', ')`    |
-
-> index
-
-```
-anim = ['cat', 'bat', 'rat', 'elephant']
-
-anim[1] # 'bat'
-anim[-1] # 'elephant'
-```
-
-> slice
-
-```
-# f_number - start index; s_number - up to, but not include
-anim[1:3] # ['bat', 'rat']
-anim[2:-1] # ['rat']
-anim[1:] # ['bat', 'rat', 'elephant']
-anim[:-1] # ['cat', 'bat', 'rat']
-anim[:] # ['cat', 'bat', 'rat', 'elephant']
-```
-
-### Data types and variables
-
-| Python              | Javascript                  |
-| ------------------- | --------------------------- |
-| `True`              | `true`                      |
-| `False`             | `false`                     |
-| `False`             | `false`                     |
-| `None`              | `undefined` `null`          |
-| `one, two = [1, 2]` | `const [one, two] = [1, 2]` |
-
-### Conditions
-
-| Python                   | Javascript                      |
-| ------------------------ | ------------------------------- |
-| `True or False`          | `true \|\| false`               |
-| `True and False`         | `true && false`                 |
-| `not True`               | `!true`                         |
-| `if name == 'Ramzan':`   | `if (name === 'Ramzan') {}`     |
-| `elif name == 'Ramzan':` | `else if (name === 'Ramzan) {}` |
-
-### Loops
-
-| Python                      | Javascript                           |
-| --------------------------- | ------------------------------------ |
-| `for i in range(5):`        | `for (let i = 0; i < 5; i++) {}`     |
-| `for i in range(12, 16):`   | `for (let i = 12; i < 16; i++) {}`   |
-| `for i in range(1, 10, 2):` | `for (let i = 1; i < 10; i += 2) {}` |
-| `for i in [1, 10, 2]:`      | `for (const i of [1, 10, 2]) {}`     |
 
 ## Answers (Albert Sweigart - Automate the Boring Stuff with Python)
 
@@ -384,3 +205,18 @@ anim[:] # ['cat', 'bat', 'rat', 'elephant']
 2. `shutil.move` used for renaming files `shutil.move(source, destination)` "move and rename"
 3. `shutil.rmtree` removes permanently folder (only, not file), `send2trash` sends to trash file and folders
 4. `zip_file = zipfile.ZipFile('file.zip'); zip_file.write('./spam.txt'); zip_file.close();`
+
+### Chapter 10
+
+1. `assert spam > 10, 'spam less than zero'`
+2. `assert egg.lower() != bacon.lower(), 'egg and bacon are the same string'`
+3. `assert False, 'this errors always trigger`
+4. `import logging; logging.basicConfig(level=logging.DEBUG, format= '%(asctime)s - %(levelname)s - %(message)s')`
+5. `import logging; logging.basicConfig(filename='myProgramLog.txt', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')`
+6. `DEBUG`, `INFO`, `WARNING`, `ERROR`, `CRITICAL`
+7. `logging.disable(logging.CRITICAL)`
+8. You've have to separate program print from debug print and less powerful api
+9. `Step` goes line by line; `Over` line by line, but doesn't go inside of function; `Out` gets you out of function
+10. Debugger stops at breakpoint
+11. Breakpoint is selected line where debugger stops
+12. By clicking on line
