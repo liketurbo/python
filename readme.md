@@ -220,3 +220,24 @@ with SOMETHING:
 10. Debugger stops at breakpoint
 11. Breakpoint is selected line where debugger stops
 12. By clicking on line
+
+### Chapter 11
+
+1. `webbrowser` - web browser controller, `requests` - making http requests, `BeautifulSoup` - html parser, `selenium` - simulator of human interactions
+2. `requests.get` returns `Response` object; to get text value use `res.text`
+3. To check that download worked, use `requests.raise_for_status()`
+4. Get status code with `res.status_code`
+5. `file = open('file_name')` `file.write(chunk)` `file.close`
+6. `ctrl-shift-j` - for console, `ctrl-shift-i` - for inspect
+7. I guess, by clicking 😁
+8. To find element with an id attribute of main - `#main`
+9. To find elements with a CSS class of highlight - `.highlight`
+10. To find all the <div> elements inside another <div> element - `div > div`
+11. To find the <button> element with a value attribute set to favorite - `button[value="favorite"]`
+12. `elem.innerText` of JS works as `elem.getText()` of Python
+13. Get all attributes `elem.attrs`
+14. Import selenium `from selenium import webdriver`
+15. `find_element` returns one element, `find_elements` returns array of elements
+16. `elem.click` mouse click simulation, `elem.send_keys('keys')` keyboard simulating
+17. You can call on any element submit method `elem.submit()`
+18. `browser.back()` `browser.forward()` `browser.refresh()` `browser.quite()`
