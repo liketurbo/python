@@ -241,3 +241,30 @@ with SOMETHING:
 16. `elem.click` mouse click simulation, `elem.send_keys('keys')` keyboard simulating
 17. You can call on any element submit method `elem.submit()`
 18. `browser.back()` `browser.forward()` `browser.refresh()` `browser.quite()`
+
+### Chapter 12
+
+1. `openpyxl.load_workbook()` returns value of _workbook_ data type
+2. `get_sheet_names()` returns list of names of sheets
+3. To retrieve sheet named _'Sheet1'_ I'll use method `get_sheet_by_name(<name>)`
+4. To retrieve active sheet I'll use method called `get_active_sheet()`
+5. I would retrieve value from cell _C5_ using `sheet['C5'].value` or `sheet.cell(r=3, c=5)`
+6. I would write value to cell _C5_ using `sheet['C5'] = 'value'` or `sheet.cell(r=3, c=5).value = 'value'`
+7. Already mentioned it in the answer _5_ and _6_
+8. `max_row` and `max_column` it is property of integer
+9. I can get index of _'M'_ with `column_index_from_string(<letter[s]>)`
+10. I can get letter of _14_ with `get_column_letter(<index>)`
+11. Get range from _A1_ to _F1_ `sheet['A1':'F1']`
+12. To save changes `wb.save(<file_name>)`
+13. U set formula just like u set another value
+14. If you wanna retreat result instead of formula itself `openpyxl.load_workbook(<name_of_file>, data_only=True)`
+15. Sets height of row 5 to 70 `sheet.row_dimensions[5].height = 70`
+16. Hides column C `sheet.column_dimensions['B'].width = 20`
+17. _OpenPyXL 2.1.4_ doesn't know how to load
+18. _Freeze pane_ it's row or column that stays when you scroll
+19. Creating bar chart
+    1. Create _Reference_ object `openpyxl.charts.Reference(sheet, start_tuple, end_tuple)`
+    2. Create _Series_ object `series_obj = openpyxl.charts.Series(ref_object, title)`
+    3. Creating _Chart Object_ `chart_obj = openpyxl.charts.BarChart()`
+    4. Adding _Series_ to _Chart Object_ `chart_obj.append(series_obj)`
+    5. Adding _Chart Object_ to _Sheet_ `sheet.add_chart(chart_obj)`
