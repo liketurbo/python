@@ -268,3 +268,20 @@ with SOMETHING:
     3. Creating _Chart Object_ `chart_obj = openpyxl.charts.BarChart()`
     4. Adding _Series_ to _Chart Object_ `chart_obj.append(series_obj)`
     5. Adding _Chart Object_ to _Sheet_ `sheet.add_chart(chart_obj)`
+
+### Chapter 13
+
+1. To `PyPDF2.PdfFileReader()` you should pass _File Object_
+2. For `PdfFileReader()` you pass _File Object_ opened in _rb_, for `PdfFileWriter()` opened in _wb_
+3. You can get specific pages by passing number to `PdfFileReader(<FileObject>).getPage(<int>)
+4. You can get number of pages with `PdfFileReader().numPages`
+5. To decrypt use `PdfFileReader().decrypt(<password>)`
+6. To rotate use methods `PageObject.rotateClockwise(<degree>)` `PageObject.rotateCounterClockwise(<degree>)`
+7. To get _Document_ object for file named `docx.Document('./demo.docx')`
+8. _Document_ contains _Paragraphs_ which contains _Runs_
+9. `docx.Document(<filename>).paragraphs` returns list of paragraphs, so can access each one by index
+10. _Run_ object has _bold_, _underline_, _italic_, _strike_ and _outline_ variables
+11. _True_ attribute always enabled, _False_ always disabled, _None_ defaults to whatever the run's style is set to
+12. To create a new document `docx.Document()` with no arguments
+13. To add paragraph to _Document_ stored in variable named _doc_ `doc.add_paragraph('Hi there!')`
+14. Headings can have levels from 0 to 4 (inclusive) `doc.add_heading('Some text', <heading_level>)`
