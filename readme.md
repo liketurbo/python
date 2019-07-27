@@ -285,3 +285,19 @@ with SOMETHING:
 12. To create a new document `docx.Document()` with no arguments
 13. To add paragraph to _Document_ stored in variable named _doc_ `doc.add_paragraph('Hi there!')`
 14. Headings can have levels from 0 to 4 (inclusive) `doc.add_heading('Some text', <heading_level>)`
+
+### Chapter 14
+
+1. Things that _CSV_ doesn't have oppose to _Excel_
+   - Don't have type values
+   - Don't have settings for font
+   - Don't have multiple worksheets
+   - Don't have width and height
+   - Don't have merged cells
+   - Don't have images and charts
+2. To `csv.reader()` and `csv.writer()` you pass _File_ object
+3. _Writer_ objects need be open with _'w'_ mode
+4. `csv_writer.writerow()` takes in argument array
+5. _delimiter_ separates columns, _lineterminator_ separates rows
+6. `json.loads()` _JSON_ to _Python Object_
+7. `json.dumps()` _Python Object_ to _JSON_
