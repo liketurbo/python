@@ -301,3 +301,16 @@ with SOMETHING:
 5. _delimiter_ separates columns, _lineterminator_ separates rows
 6. `json.loads()` _JSON_ to _Python Object_
 7. `json.dumps()` _Python Object_ to _JSON_
+
+### Chapter 15
+
+1. _Unix epoch_ is time reference commonly used in programming to 12 AM January 1, 1970
+2. `time.time()` returns number of seconds as float value
+3. `time.sleep(5)` pauses program for exactly 5 second
+4. `round()` rounds float to precision you specify
+5. _timedelta_ represents duration, rather moment in time
+6. `threading.Thread(target=spam).start()` runs function _spam_ in separate thread
+7. To avoid concurrency issues
+   1. Do not use same variables from different threads
+   2. Do not use same files at same time
+8. `subprocess.Popen('calc')` launches calculator
