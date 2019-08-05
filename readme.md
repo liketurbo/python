@@ -314,3 +314,24 @@ with SOMETHING:
    1. Do not use same variables from different threads
    2. Do not use same files at same time
 8. `subprocess.Popen('calc')` launches calculator
+
+### Chapter 16
+
+1. Protocol for sending email - _SMTP_, protocol for checking and receiving email - _IMAP_
+2. Log in to an _SMTP_ server
+   1. `smtp_obj = smtplib.SMTP('smtp.mail.ru',587) # Creating SMTP object`
+   2. `smtp_obj.ehlo() # Establish connection`
+   3. `smtp_obj.starttls() # Enable encryption`
+   4. `smtp_obj.login('andrey.lukin.1986@bk.ru', 'Sswwf3i0NDyo4Pv') # Login`
+3. Log in to an _IMAP_ server
+   1. `imap_obj = imapclient.IMAPClient('imap.mail.ru')`
+   2. `imap_obj.login('andrey.lukin.1986@bk.ru', 'Sswwf3i0NDyo4Pv')`
+4. `imap_obj.search()` takes array of _IMAP_ search keys
+5. If got error of more that 10000 bytes, you can:
+   1. Increase size limit `imapclient.imaplib._MAXLINE = 100000`
+   2. Try to fetch less
+6. `pyzmail` module helps parse raw messages from `imap_obj`
+7. In order to use twilio you need:
+   1. Twilio number
+   2. Account SID
+   3. Auth token
